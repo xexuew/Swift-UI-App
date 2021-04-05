@@ -7,4 +7,3 @@ workflows:
       test_report: build/ios/test/*.xml
     - name: Increment build number
       script: agvtool new-version -all $(($BUILD_NUMBER +1))
-    
