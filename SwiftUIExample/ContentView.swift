@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  SwiftUI
+//  SwiftUIExample
 //
 //  Created by Jose Torronteras on 05/04/2021.
 //
