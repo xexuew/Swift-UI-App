@@ -1,0 +1,8 @@
+workflows:
+  my-workflow:
+    name: My workflow name
+    scripts:
+    - name: iOS test
+      script: xcode-project run-tests --project SwiftUIExample.xcodeproj --scheme SwiftUIExample --device "iPhone 11"
+    - name: Increment build number
+      script: agvtool new-version -all $(($BUILD_NUMBER +1))
