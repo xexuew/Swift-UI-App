@@ -3,8 +3,8 @@ workflows:
     name: My workflow name
     scripts:
     - name: iOS test
-        script: xcode-project run-tests --scheme SwiftUI --device "iPhone 11"
-        test_report: build/ios/test/*.xml
+      script: xcode-project run-tests --scheme SwiftUI --device "iPhone 11"
+      test_report: build/ios/test/*.xml
     - name: Increment build number
-        script: agvtool new-version -all $(($BUILD_NUMBER +1))
+      script: agvtool new-version -all $(($BUILD_NUMBER +1))
     
