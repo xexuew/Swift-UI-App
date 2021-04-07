@@ -1,8 +1,13 @@
 workflows:
-  my-workflow:
-    name: My workflow name
+  ios-build-workflow:
+    name: iOS Build Workflow
+    environment:
+      vars:
+        CODECOV_TOKEN: Encrypted(Z0FBQUFBQmdiZWpNMVFLeE12QVdwWFUyOTR5eHF5WjRhX0RRYTgxTEx1ZGVFU3BOQldBZEdINWJrMHFCc3VEUkZMZ3JsTWttUUdmMGZpOUFZMHVsQmEtbEExZXRSbmxJTTI3RGtQWmRpcDVXeVk2c3JYeVVSVWpscGx4c1RUSXN1QTNaalExYTVkbkU=)
     scripts:
     - name: iOS test
       script: xcode-project run-tests --project SwiftUIExample.xcodeproj --scheme SwiftUIExample --device "iPhone 11"
     - name: Increment build number
       script: agvtool new-version -all $(($BUILD_NUMBER +1))
+    - name: Upload reports to Codecov.ios
+      script: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN

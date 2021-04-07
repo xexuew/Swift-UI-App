@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17205573261D9366008BE4C7 /* RollbarKSCrash in Frameworks */ = {isa = PBXBuildFile; productRef = 17205572261D9366008BE4C7 /* RollbarKSCrash */; };
+		17205575261D9366008BE4C7 /* RollbarSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 17205574261D9366008BE4C7 /* RollbarSwift */; };
+		17205577261D9366008BE4C7 /* RollbarCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 17205576261D9366008BE4C7 /* RollbarCommon */; };
+		17205579261D9366008BE4C7 /* RollbarNotifier in Frameworks */ = {isa = PBXBuildFile; productRef = 17205578261D9366008BE4C7 /* RollbarNotifier */; };
+		1720557B261D9366008BE4C7 /* RollbarDeploys in Frameworks */ = {isa = PBXBuildFile; productRef = 1720557A261D9366008BE4C7 /* RollbarDeploys */; };
+		1720557D261D9366008BE4C7 /* RollbarPLCrashReporter in Frameworks */ = {isa = PBXBuildFile; productRef = 1720557C261D9366008BE4C7 /* RollbarPLCrashReporter */; };
 		17FA2E52261B9E9300B4A6DB /* SwiftUIExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FA2E51261B9E9300B4A6DB /* SwiftUIExampleApp.swift */; };
 		17FA2E54261B9E9300B4A6DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FA2E53261B9E9300B4A6DB /* ContentView.swift */; };
 		17FA2E56261B9E9600B4A6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FA2E55261B9E9600B4A6DB /* Assets.xcassets */; };
@@ -33,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17205581261D9632008BE4C7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		17FA2E4E261B9E9300B4A6DB /* SwiftUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FA2E51261B9E9300B4A6DB /* SwiftUIExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExampleApp.swift; sourceTree = "<group>"; };
 		17FA2E53261B9E9300B4A6DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +59,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17205577261D9366008BE4C7 /* RollbarCommon in Frameworks */,
+				17205579261D9366008BE4C7 /* RollbarNotifier in Frameworks */,
+				1720557D261D9366008BE4C7 /* RollbarPLCrashReporter in Frameworks */,
+				17205573261D9366008BE4C7 /* RollbarKSCrash in Frameworks */,
+				17205575261D9366008BE4C7 /* RollbarSwift in Frameworks */,
+				1720557B261D9366008BE4C7 /* RollbarDeploys in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17205589261D9693008BE4C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				17205581261D9632008BE4C7 /* Config.xcconfig */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		17FA2E45261B9E9300B4A6DB = {
 			isa = PBXGroup;
 			children = (
@@ -95,10 +116,11 @@
 		17FA2E50261B9E9300B4A6DB /* SwiftUIExample */ = {
 			isa = PBXGroup;
 			children = (
+				17FA2E55261B9E9600B4A6DB /* Assets.xcassets */,
 				17FA2E51261B9E9300B4A6DB /* SwiftUIExampleApp.swift */,
 				17FA2E53261B9E9300B4A6DB /* ContentView.swift */,
-				17FA2E55261B9E9600B4A6DB /* Assets.xcassets */,
 				17FA2E5A261B9E9600B4A6DB /* Info.plist */,
+				17205589261D9693008BE4C7 /* Supporting Files */,
 				17FA2E57261B9E9600B4A6DB /* Preview Content */,
 			);
 			path = SwiftUIExample;
@@ -146,6 +168,14 @@
 			dependencies = (
 			);
 			name = SwiftUIExample;
+			packageProductDependencies = (
+				17205572261D9366008BE4C7 /* RollbarKSCrash */,
+				17205574261D9366008BE4C7 /* RollbarSwift */,
+				17205576261D9366008BE4C7 /* RollbarCommon */,
+				17205578261D9366008BE4C7 /* RollbarNotifier */,
+				1720557A261D9366008BE4C7 /* RollbarDeploys */,
+				1720557C261D9366008BE4C7 /* RollbarPLCrashReporter */,
+			);
 			productName = SwiftUIExample;
 			productReference = 17FA2E4E261B9E9300B4A6DB /* SwiftUIExample.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +247,9 @@
 				Base,
 			);
 			mainGroup = 17FA2E45261B9E9300B4A6DB;
+			packageReferences = (
+				17205571261D9366008BE4C7 /* XCRemoteSwiftPackageReference "rollbar-apple" */,
+			);
 			productRefGroup = 17FA2E4F261B9E9300B4A6DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,6 +331,7 @@
 /* Begin XCBuildConfiguration section */
 		17FA2E71261B9E9600B4A6DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17205581261D9632008BE4C7 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -359,6 +393,7 @@
 		};
 		17FA2E72261B9E9600B4A6DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17205581261D9632008BE4C7 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -574,6 +609,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17205571261D9366008BE4C7 /* XCRemoteSwiftPackageReference "rollbar-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rollbar/rollbar-apple.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17205572261D9366008BE4C7 /* RollbarKSCrash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17205571261D9366008BE4C7 /* XCRemoteSwiftPackageReference "rollbar-apple" */;
+			productName = RollbarKSCrash;
+		};
+		17205574261D9366008BE4C7 /* RollbarSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17205571261D9366008BE4C7 /* XCRemoteSwiftPackageReference "rollbar-apple" */;
+			productName = RollbarSwift;
+		};
+		17205576261D9366008BE4C7 /* RollbarCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17205571261D9366008BE4C7 /* XCRemoteSwiftPackageReference "rollbar-apple" */;
+			productName = RollbarCommon;
+		};
+		17205578261D9366008BE4C7 /* RollbarNotifier */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17205571261D9366008BE4C7 /* XCRemoteSwiftPackageReference "rollbar-apple" */;
+			productName = RollbarNotifier;
+		};
+		1720557A261D9366008BE4C7 /* RollbarDeploys */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17205571261D9366008BE4C7 /* XCRemoteSwiftPackageReference "rollbar-apple" */;
+			productName = RollbarDeploys;
+		};
+		1720557C261D9366008BE4C7 /* RollbarPLCrashReporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17205571261D9366008BE4C7 /* XCRemoteSwiftPackageReference "rollbar-apple" */;
+			productName = RollbarPLCrashReporter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 17FA2E46261B9E9300B4A6DB /* Project object */;
 }
