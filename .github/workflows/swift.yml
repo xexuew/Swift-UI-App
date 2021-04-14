@@ -10,6 +10,7 @@ jobs:
   tests:
     runs-on: macos-latest
     steps:
+    - uses: actions/checkout@v1
     - uses: sersoft-gmbh/xcodebuild-action@v1
       with:
         project: SwiftUIExample.xcodeproj
