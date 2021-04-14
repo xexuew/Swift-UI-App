@@ -10,8 +10,17 @@ jobs:
   build:
 
     runs-on: macos-latest
-
+    strategy:
+      matrix:
+        destination:
+          - platform=iOS Simulator,OS=latest,name=iPhone 11
+        action: [ test ]
+        use-xcpretty: [ true, false ]
     steps:
-    - uses: actions/checkout@v2
     - name: Run tests
-      run: xcode-project run-tests --project SwiftUIExample.xcodeproj --scheme SwiftUIExample
+    - uses: sersoft-gmbh/xcodebuild-action@v1
+      with:
+        project: SwiftUIExample.xcodeproj
+        scheme: SwiftUIExample
+        destination: platform=iOS
+        action: test
