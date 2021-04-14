@@ -7,17 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  tests:
     runs-on: macos-latest
-    strategy:
-      matrix:
-        destination:
-          - platform=iOS Simulator,OS=latest,name=iPhone 11
-        action: [ test ]
-        use-xcpretty: [ true, false ]
     steps:
-    - name: Run tests
     - uses: sersoft-gmbh/xcodebuild-action@v1
       with:
         project: SwiftUIExample.xcodeproj
