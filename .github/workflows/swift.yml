@@ -9,11 +9,15 @@ on:
 jobs:
   tests:
     runs-on: macos-latest
+    strategy:
+      matrix:
+        destination:
+          - platform=iOS Simulator,OS=latest,name=iPhone 11
     steps:
     - uses: actions/checkout@v1
     - uses: sersoft-gmbh/xcodebuild-action@v1
       with:
         project: SwiftUIExample.xcodeproj
         scheme: SwiftUIExample
-        destination: platform=iOS
+        destination: platform=iOS Simulator,OS=latest,name=iPhone 11
         action: test
