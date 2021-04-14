@@ -1,0 +1,20 @@
+name: Swift
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  tests:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: sersoft-gmbh/xcodebuild-action@v1
+      with:
+        project: SwiftUIExample.xcodeproj
+        scheme: SwiftUIExample
+        destination: platform=iOS Simulator,OS=latest,name=iPhone 11
+        action: test
+        use-xcpretty: true
