@@ -30,6 +30,17 @@ struct SwiftUIExampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+        }.onChange(of: scenePhase) { (newScenePhase) in
+            switch newScenePhase {
+            case .background:
+                print("App State : Background")
+            case .inactive:
+                print("App State : Inactive")
+            case .active:
+                print("App State : Active")
+            @unknown default:
+                print("App State : Unknown")
+            }
         }
     }
 }
